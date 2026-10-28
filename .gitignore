@@ -1,0 +1,22 @@
+# Build artifacts
+build/
+**/build/
+**/__pycache__/
+*.pyc
+
+# User input and generated output
+input/*
+!input/.gitkeep
+!input/README.md
+output/*
+!output/.gitkeep
+!output/README.md
+
+# Private keys (defense in depth: output/ is already ignored)
+**/rsa-private.pem
+**/ec-private.pem
+**/keypair/
+
+# Local scratch
+tmp/
+*.log

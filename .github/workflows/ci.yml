@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  windows-native:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - name: Build and sign the three typical licenses
+        shell: pwsh
+        run: |
+          python tools/cybertriage-license/issue.py --output-dir build/issue-test --skip-msi --license-id 862145687
+      - name: Show report
+        shell: pwsh
+        run: Get-Content build/issue-test/report.txt
+
+  linux-container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Linux image
+        run: docker build -t cybertriage-license-tool .
+      - name: Smoke test the image (license-only)
+        run: docker run --rm cybertriage-license-tool --skip-msi --license-id 862145687

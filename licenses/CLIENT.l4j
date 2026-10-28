@@ -1,0 +1,22 @@
+{
+  "version": 2.4,
+  "license_details": {
+    "type": "PAID",
+    "mode": "CLIENT_SERVER",
+    "runtime_mode": "CLIENT",
+    "telemetry_mode": "ALWAYS_DISABLED",
+    "incident_access_control": "LICENSED",
+    "subscription_tier": "ENTERPRISE",
+    "license_uuid": "f86b5a9d-8d8e-4beb-9620-d903e503f0ca",
+    "max_clients": 100,
+    "max_concurrent_collections": 8,
+    "group_name": "",
+    "reversinglabs_details": {
+      "api_key": "<redacted>",
+      "expiration_date": "Dec 31, 2099",
+      "hash_lookup_weekly_limit": 999999999,
+      "file_upload_weekly_limit": 999999999,
+      "ip_lookup_daily_limit": 999999999
+    }
+  }
+}

@@ -1,0 +1,17 @@
+services:
+  issue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cybertriage-license-tool:latest
+    volumes:
+      - ./input:/data/input
+      - ./output:/data/output
+    environment:
+      LICENSE_ID: "${LICENSE_ID:-862145687}"
+      CUSTOMER: "${CUSTOMER:-}"
+      CUSTOMER_NAME: "${CUSTOMER_NAME:-}"
+      FORCE: "${FORCE:-0}"
+      NEW_KEYPAIR: "${NEW_KEYPAIR:-0}"
+      KEEP_SIGNATURE: "${KEEP_SIGNATURE:-0}"
+      SKIP_MSI: "${SKIP_MSI:-0}"

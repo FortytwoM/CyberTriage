@@ -1,0 +1,11 @@
+.git
+.github
+.gitignore
+input
+output
+tmp
+**/build
+**/__pycache__
+**/*.pyc
+**/*.msi
+*.log
